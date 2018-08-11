@@ -1,0 +1,35 @@
+debug: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: WARN
+    org.springframework.boot: OFF
+    org.springframework.web: WARN
+    org.springframework.security: WARN
+    org.springframework.http.client: WARN
+    org.hibernate: OFF
+    org.hibernate.SQL : OFF
+    org.elasticsearch: WARN
+    jdbc: WARN
+    org.axonframework: WARN
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5431/simple
+    username: simple
+    password: simple
+    validation-query: SELECT 1;
+    test-on-borrow: true
+    validation-interval: 30000
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: false
